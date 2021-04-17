@@ -105,7 +105,7 @@ function fiterProductByQuantity(listProduct){
     }
     result = listProduct.filter(function(value){
         if(isObject(value)){
-            return !value.isDelete && value.quantity>500;
+            return !value.isDelete && value.quantity>0;
         }
     });
     if(isArray(result) && result.length>0){
@@ -125,7 +125,7 @@ function fiterProductByQuantityUseFor(listProduct){
     }
     for (let index = 0; index < listProduct.length; index++) {
         const object = listProduct[index];
-        if(isObject(object) && object.isDelete !== null && object.quantity>500){
+        if(isObject(object) && object.isDelete !== null && object.quantity>0){
             result.push(object);
         }
     }
